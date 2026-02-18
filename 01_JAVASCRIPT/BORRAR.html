@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    
+
+let numeros = [ 1,2,3,4,5,6,7,8,9,10 ]
+
+function imprimirConsola(lista){
+    for(a=0; a<lista.length; a++){
+        elem = lista[a]
+        console.log(elem)
+    }
+}
+
+
+
+function insertarBBDD(lista){
+    for(a=0; a<lista.length; a++){
+        elem = lista[a]
+        console.log(`Insertando ${elem} en la BB.DD.`)
+    }
+}
+
+
+function forEach(lista, funcion){
+    for(a=0; a<lista.length; a++){
+        elem = lista[a]
+        funcion(elem)
+    }
+}
+
+let f1 = function(elem){ console.log("Imprimientdo por consola: "+elem) }
+let f2 = function(elem){ console.log("Insertando en la BB.DD.: "+elem) }
+let f3 = function(elem){ console.log("NO SE QUE: "+elem) }
+
+
+forEach(numeros, f1)
+forEach(numeros, f2)
+forEach(numeros, f3)
+
+console.log("=======================================")
+
+let palabras = ["siete", "caballos", "vienen", "de", "Bonanza"]
+forEach(palabras, function(elem) { console.log("Palabra: "+elem)} )
+forEach(palabras, elem => console.log("Palabra Bis: "+elem) )
+
+
+
+
+
+
+
+//numeros.forEach( f1 )
+
+
+//imprimirConsola(numeros)
+//insertarBBDD(numeros)
+
+
+</script>
+
+<body>
+    
+    <h1>01_Variables</h1>
+
+</body>
+
+</html>
+
+
