@@ -1,6 +1,0 @@
-
-function saludar(){
-    alert("HOLA")
-}
-
-
