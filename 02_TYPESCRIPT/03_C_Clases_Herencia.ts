@@ -1,8 +1,8 @@
 
 abstract class Animal {
-    public nombre:string
-    public peso:number
-    public edad:number
+    public nombre?:string
+    public peso?:number
+    public edad?:number
 
     public abstract saludar():void
 }

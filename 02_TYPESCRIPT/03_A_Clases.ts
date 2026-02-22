@@ -12,16 +12,16 @@ class CuentaBancaria {
 
     //Identidad
     //Propiedades/atributos/campos/variables de clase/variables miembro   
-    IBAN     : string
-    banco    : number
-    sucursal : number
-    dc       : number
-    libreta  : number
+    IBAN     : string = ''
+    banco    : number = 0
+    sucursal : number = 0
+    dc       : number = 0
+    libreta  : number = 0
 
     //Funcionalidad
     //Dentro de una clase no se utiliza la palabra reservada 'function'
     toString():string{
-        //Pra acceder a un componente de la clase dentro de una de sus funciones
+        //Para acceder a un componente de la clase dentro de una de sus funciones
         //hay que utilizar 'this'        
         return this.IBAN+this.banco+this.sucursal+this.dc+this.libreta
     }
@@ -31,7 +31,7 @@ class CuentaBancaria {
 //Instanciando un objeto
 
 //Sin usar el tipo:
-//let cb1 = new CuentaBancaria()
+let cb1_ = new CuentaBancaria()
 //
 //Usando el tipo (una vez creada una clase tenemos un nuevo tipo de variables):
 let cb1:CuentaBancaria = new CuentaBancaria()
@@ -52,6 +52,7 @@ cb1.libreta = 1234567890
 //En typescript podemos tener un constructor (y solo uno)
 //No hay sobrecarga de constructores (obvio)
 //El constructor debe llamarse 'constructor'
+//El constructor puede recibir parámetros
 //El constructor no devuelve nada, pero no es 'void'
 //Todas las clases tienen constructor, aunque sea implícitamente
 
@@ -122,8 +123,8 @@ let alumno6:Alumno = new Alumno("Menganita","",500)
 
 class Prueba {
     //los componentes sin modificador de acceso son 'public'
-    dato1 : number
-    public    dato2 : number
+    dato1 : number = 0
+    public    dato2 : number = 0
     protected dato3 : number = 30
     private   dato4 : number = 40
 
@@ -204,7 +205,7 @@ class Poligono {
     //public nombre:string
     //public vertices:Punto[]
 
-    constructor(public nombre:string = null, 
+    constructor(public nombre:string = '', 
                 public vertices:Punto[] = []){
         //this.nombre   = nombre
         //this.vertices = vertices
@@ -212,8 +213,8 @@ class Poligono {
 }
 
 class Linea {
-    constructor(public p1      :Punto  = null,
-                public p2      :Punto  = null,
+    constructor(public p1?     :Punto,
+                public p2?     :Punto,
                 public segmento:boolean=false){
     }
 }
@@ -222,8 +223,8 @@ class Circulo {
     //public centro:Punto
     //public radio:number
 
-    constructor(public centro:Punto = null, 
-                public radio :number = null){
+    constructor(public centro?:Punto, 
+                public radio ?:number){
         //this.centro = centro
         //this.radio = radio
     }
@@ -234,7 +235,6 @@ console.log(punto1.x)
 console.log(punto1.y)
 
 let circulo:Circulo = new Circulo()
-
 
 
 /*

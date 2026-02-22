@@ -45,7 +45,6 @@ class GeneradorInformes {
 
 }
 
-
 class GeneradorInformes_ {
 
     public crearInforme(datos:string):string{
