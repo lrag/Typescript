@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Capitulo_1 = require("./Capitulo");
+var Libro_1 = require("./Libro");
+var c1 = new Capitulo_1.Capitulo(1, "Contra la estupidez...", "Lorem fistrum tiene musho peligro qué dise usteer ese pedazo de hasta luego Lucas...");
+var c2 = new Capitulo_1.Capitulo(2, "...Los propios dioses...", "Lorem fistrum qué dise usteer pecador va usté muy cargadoo tiene musho peligro...");
+var c3 = new Capitulo_1.Capitulo(3, "...¿Luchan en vano?", "Lorem fistrum la caidita condemor diodenoo no puedor ese pedazo de...");
+var capitulos = [c1, c2, c3];
+var libro = new Libro_1.Libro("Los propios Dioses", "Isaac Asimov", 1972, capitulos);
+// libro.imprimir_MAL();
+console.log(libro.formatearTexto());

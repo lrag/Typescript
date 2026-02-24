@@ -7,6 +7,7 @@ class Coche {
 
     public marca:string
     public modelo: string
+    public static velocidadMaxima:number = 300000
 
     public constructor(marca:string, modelo:string){
         this.marca = marca
@@ -23,10 +24,12 @@ class Coche {
     public static saludar2():void{
         //No podemos acceder ni a marca ni a modelo
         //console.log(`Hola, soy el coche ${this.marca} ${this.modelo}`)
+        console.log(this.velocidadMaxima)
     }   
 
 }
 
+//Para invocar un método estático utilizamos el nombre de la clase
 Coche.saludar2()
 
 let coche:Coche = new Coche("FIAT", "Uno 45s")

@@ -32,6 +32,7 @@ class CuentaBancaria {
 
 //Sin usar el tipo:
 let cb1_ = new CuentaBancaria()
+
 //
 //Usando el tipo (una vez creada una clase tenemos un nuevo tipo de variables):
 let cb1:CuentaBancaria = new CuentaBancaria()
@@ -57,7 +58,7 @@ cb1.libreta = 1234567890
 //Todas las clases tienen constructor, aunque sea implícitamente
 
 class Libro {
-    ISBN   : string
+    ISBN   : string 
     autor  : string
     titulo : string
 
@@ -235,45 +236,4 @@ console.log(punto1.x)
 console.log(punto1.y)
 
 let circulo:Circulo = new Circulo()
-
-
-/*
-
-class Producto {
-    _id         : string
-    nombre      : string
-    fabricante  : string
-    peso        : number
-    descripcion : string
-}
-
-class Cliente {
-    _id       : string
-    codigo    : string
-    nombre    : string
-    direccion : string
-    telefono  : string
-}
-
-class DetallePedido {
-    cantidad : number
-    precio   : number
-    producto : Producto
-}
-
-class Pedido {
-    _id      : string
-    codigo   : string
-    fecha    : string
-    cliente  : Cliente
-    detalles : DetallePedido[]
-    total    : number
-}
-
-*/
-
-
-
-
-
 

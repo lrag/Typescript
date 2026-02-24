@@ -39,7 +39,7 @@ export class PeliculaRepositoryMongoDB implements PeliculaRepository {
 
     async findAll(): Promise<Pelicula[]> {
         const docs = await this.collection.find().toArray()
-        return docs.map(d => new Pelicula(d._id.toString(), d.titulo, d.director, d.genero, d.year))
+        return docs.map((d: any) => new Pelicula(d._id.toString(), d.titulo, d.director, d.genero, d.year))
     }
 
     async findById(id: string): Promise<Pelicula | null> {

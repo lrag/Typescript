@@ -49,7 +49,7 @@ almacenamientoPeliculas1.add(pelicula1)
 
 class Almacenamiento <T> {
 
-    public elementos:T[]
+    public elementos:T[] = []
 
     public add(elemento:T):void{
         this.elementos.push(elemento)
@@ -71,3 +71,28 @@ almacenamientoPeliculas2.add(pelicula1)
 
 let coche2:Coche = almacenamientoCoches2.get(0)
 //let pelicula2:Pelicula = almacenamientoCoches2.get(0)
+
+
+/////////////
+// EXTENDS //
+/////////////
+
+interface ConId {
+    id: string | number
+}
+
+function imprimirId<T extends ConId>(objeto: T) {
+    console.log(`El ID es: ${objeto.id}`)
+}
+
+let x1:ConId = {
+    id: 1
+} 
+
+let x2 = {
+    nombre: "x2"
+}
+
+imprimirId(x1)
+//imprimirId(x2)
+
