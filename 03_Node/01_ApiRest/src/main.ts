@@ -17,7 +17,7 @@ async function main() {
   try {
 
     const client = new MongoClient(MONGO_URI)
-    fastify.log.info('Conectando a MongoDB...')
+    fastify.log.info('Conectando a MongoDB con el driver como los grandes campeones...')
     await client.connect();
     fastify.log.info('OK');
 
