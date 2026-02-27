@@ -51,13 +51,6 @@ export class EndpointPeliculas {
         return PeliculaDTOMapper.toDTOList(peliculas)
     }
 
-    /*
-    private async listar(request: FastifyRequest, reply: FastifyReply) {
-        const peliculas = await this.peliculaRepo.findAll()
-        return PeliculaDTOMapper.toDTOList(peliculas)
-    }
-    */
-
     private async buscarPorId(request: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
         try {
             // Uso directo de Mongoose
@@ -73,23 +66,6 @@ export class EndpointPeliculas {
             return reply.status(500).send({ error: e.message })
         }
     }    
-
-    /*
-    private async buscarPorId(request: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
-        try {
-            const peliculaEncontrada = await this.peliculaRepo.findById(request.params.id)
-            
-            console.log("PELICULA ENCONTRADA: ", peliculaEncontrada)
-            
-            if(peliculaEncontrada){
-                return reply.send(PeliculaDTOMapper.toDTO(peliculaEncontrada))
-            }
-            return reply.status(404).send({ error: 'Película no encontrada' })
-        } catch (e: any) {
-            return reply.status(500).send({ error: e.message })
-        }
-    }
-    */
 
     private async borrarPorId(request: FastifyRequest<{ Params: { id: string } }>, reply: FastifyReply) {
         try {

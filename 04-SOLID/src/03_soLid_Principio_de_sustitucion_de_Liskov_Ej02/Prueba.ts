@@ -15,7 +15,7 @@ export class Aplicacion {
         ];
 
         const discos2: DiscoGrabable[] = [
-            // new CD_ROM(),
+            //new CD_ROM(),
             new CD_R(),
             new CD_RW()
         ];
@@ -23,7 +23,7 @@ export class Aplicacion {
         console.log("===================================");        
         for (const d of discos) {
             d.leer(0);
-            // d.escribir(1); 
+            //d.escribir(1); 
         }
         
         console.log("===================================");        

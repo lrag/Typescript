@@ -39,6 +39,7 @@ class PerroPolicia extends Perro {
         public numeroCasosResueltos: number = 0
     ) {
         super(nombre, peso, edad, numeroPulgas)
+        
         if(numeroCasosResueltos < 0){
             throw new Error("Número de casos ha de ser cero o mayor")
         }

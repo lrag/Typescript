@@ -6,12 +6,12 @@ import { PeliculaRepository } from '../modelo/repositorios/PeliculaRepository'
 
 export class EndpointPeliculas {
     
-    private readonly bodySchema: FastifySchema = {
+    private static readonly bodySchema: FastifySchema = {
         body: {
             type: 'object',
             required: ['titulo', 'director', 'year'],
             properties: {
-                titul   : { type: 'string' },
+                titulo  : { type: 'string' },
                 director: { type: 'string' },
                 genero  : { type: 'string' },
                 year    : { type: 'integer' }
@@ -25,9 +25,14 @@ export class EndpointPeliculas {
     ) {}
 
     async registrarRutas(fastify: FastifyInstance) {
+        //GET    /peliculas
+        //GET    /peliculas/:id
+        //POST   /peliculas
+        //PUT    /peliculas/:id
+        //DELETE /peliculas/:id
         console.log("Registrando rutas de EndpointPeliculas.")
-        fastify.post<{ Body: PeliculaBaseDTO }>('/peliculas', { schema: this.bodySchema }, this.insertar.bind(this))
-        fastify.put<{ Params: { id: string }, Body: PeliculaBaseDTO }>('/peliculas/:id', { schema: this.bodySchema }, this.modificar.bind(this))
+        fastify.post<{ Body: PeliculaBaseDTO }>('/peliculas', { schema: EndpointPeliculas.bodySchema }, this.insertar.bind(this))
+        fastify.put<{ Params: { id: string }, Body: PeliculaBaseDTO }>('/peliculas/:id', { schema: EndpointPeliculas.bodySchema }, this.modificar.bind(this))
         fastify.get('/peliculas', this.listar.bind(this))
         fastify.get<{ Params: { id: string } }>('/peliculas/:id', this.buscarPorId.bind(this))
         fastify.delete<{ Params: { id: string } }>('/peliculas/:id', this.borrarPorId.bind(this))

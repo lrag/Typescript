@@ -15,7 +15,6 @@ export class PeliculaDTOMapper {
 
     static toDTO(pelicula: Pelicula): PeliculaResponseDTO {
         const { id, titulo, director, genero, year } = pelicula
-        
         return {
             id, 
             titulo,

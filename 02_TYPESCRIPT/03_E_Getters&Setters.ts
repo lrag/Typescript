@@ -7,8 +7,11 @@ export class Pelicula_1 {
         public genero  : string,
         public year    : number
     ) {}
-
 }
+
+const p1 = new Pelicula_1(1,"","","",1)
+p1.year = 2000
+p1.year = 1800
 
 export class Pelicula_2 {
     constructor(
@@ -30,6 +33,9 @@ export class Pelicula_2 {
     }
 
     //TITULO
+    public getTitulo():any{ return '2001'}
+    public setTilulo(titulo:any){}
+
     get titulo(): string {
         return this._titulo;
     }
@@ -58,16 +64,22 @@ export class Pelicula_2 {
         return this._year;
     }
     set year(value: number) {
+        if(value<=1900){
+            throw new Error("DE KE BAS HIMBEZIL!")
+        }
         this._year = value;
     }
 
 }
 
-let p = new Pelicula_2(1,"Alien","RS","CI-FI",1979)
+let p2 = new Pelicula_2(1,"Alien","RS","CI-FI",1979)
 
 //Se accede con el punto y sin invocar expresamente el get o el set
-p.id = 100
-let x = p.id
+p2.id = 100
+let x = p2.id
+
+p2.setTilulo("2001")
+p2.titulo = "2001"
 
 
 

@@ -6,6 +6,7 @@ export class PeliculaRepositoryMongoDB implements PeliculaRepository {
 
     private collection: Collection;
 
+    //Inyección de dependencias
     constructor(client: MongoClient) {
         this.collection = client.db('ejemplo_01').collection('peliculas')
     }

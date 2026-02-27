@@ -1,15 +1,6 @@
 import { Schema, model, Document } from 'mongoose';
 import { Pelicula } from '../entidades/Pelicula';
 
-/*
-export interface Pelicula extends Document {
-    titulo: string;
-    director: string;
-    genero: string;
-    year: number;
-}
-*/
-
 const peliculaSchema = new Schema<Pelicula>({
     titulo: { 
         type: String, 

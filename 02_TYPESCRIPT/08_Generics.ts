@@ -65,9 +65,9 @@ let almacenamientoCoches2:Almacenamiento<Coche> = new Almacenamiento()
 let almacenamientoPeliculas2:Almacenamiento<Pelicula> = new Almacenamiento()
 
 almacenamientoCoches2.add(coche1)
-//almacenamientoPeliculas2.add(coche1)
 //almacenamientoCoches2.add(pelicula1)
 almacenamientoPeliculas2.add(pelicula1)
+//almacenamientoPeliculas2.add(coche1)
 
 let coche2:Coche = almacenamientoCoches2.get(0)
 //let pelicula2:Pelicula = almacenamientoCoches2.get(0)
